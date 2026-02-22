@@ -15,7 +15,7 @@ const Features = () => {
         <section className="section features-section">
             <div className="container">
                 <div className="features-grid">
-                    <div className="features-content">
+                    <div className="features-content reveal-left">
                         <span className="section-eyebrow">What Makes Us Different</span>
                         <h2 className="section-title">Built Around Real Job Roles. <br /><span className="text-gradient">Not Random Content.</span></h2>
                         <p className="section-subtitle">
@@ -24,7 +24,7 @@ const Features = () => {
 
                         <ul className="features-list">
                             {featuresList.map((feature, index) => (
-                                <li key={index} className="feature-item glass-panel">
+                                <li key={index} className={`feature-item glass-panel delay-${(index + 1) * 100}`}>
                                     <CheckCircle size={24} className="text-cyan-accent flex-shrink-0" />
                                     <span>{feature}</span>
                                 </li>
@@ -32,8 +32,8 @@ const Features = () => {
                         </ul>
                     </div>
 
-                    <div className="features-visual">
-                        <div className="visual-dashboard glass-panel">
+                    <div className="features-visual reveal-right">
+                        <div className="visual-dashboard glass-panel delay-200">
                             <div className="dashboard-header">
                                 <div className="dots">
                                     <span></span><span></span><span></span>

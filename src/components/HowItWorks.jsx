@@ -39,7 +39,7 @@ const HowItWorks = () => {
     return (
         <section className="section how-it-works-section">
             <div className="container">
-                <div className="section-header text-center">
+                <div className="section-header text-center reveal">
                     <span className="section-eyebrow">How It Works</span>
                     <h2 className="section-title">From Learning to Employment — <br /><span className="text-gradient">Structured for Industry Success</span></h2>
                 </div>
@@ -47,7 +47,7 @@ const HowItWorks = () => {
                 <div className="timeline-container">
                     <div className="timeline-line"></div>
                     {steps.map((step, index) => (
-                        <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+                        <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left reveal-left' : 'right reveal-right'} delay-${(index % 2 + 1) * 100}`}>
                             <div className="timeline-content glass-panel">
                                 <span className="step-number text-gradient">Step {index + 1}</span>
                                 <h3 className="step-title">{step.title}</h3>

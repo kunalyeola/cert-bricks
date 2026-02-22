@@ -25,7 +25,7 @@ const SkillGap = () => {
     ];
 
     return (
-        <section className="section skill-gap-section">
+        <section className="section skill-gap-section reveal">
             <div className="container">
                 <div className="section-header text-center">
                     <span className="section-eyebrow">The Skill Gap Is a Business Risk</span>
@@ -37,7 +37,7 @@ const SkillGap = () => {
 
                 <div className="cards-grid">
                     {cards.map((card, index) => (
-                        <div key={index} className="glass-panel skill-card">
+                        <div key={index} className={`glass-panel skill-card reveal delay-${(index + 1) * 100}`}>
                             <div className="card-icon-wrapper">
                                 {card.icon}
                             </div>

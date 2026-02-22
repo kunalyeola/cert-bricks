@@ -15,7 +15,7 @@ const ReadinessIndex = () => {
         <section className="section readiness-section">
             <div className="container">
                 <div className="readiness-grid">
-                    <div className="readiness-visual">
+                    <div className="readiness-visual reveal-left">
                         <div className="profile-card glass-panel">
                             <div className="profile-header">
                                 <div className="profile-avatar">
@@ -50,7 +50,7 @@ const ReadinessIndex = () => {
                         </div>
                     </div>
 
-                    <div className="readiness-content">
+                    <div className="readiness-content reveal-right">
                         <span className="section-eyebrow">The Industry Readiness Index</span>
                         <h2 className="section-title">Measurable Skill Validation. <br /><span className="text-gradient">No Guesswork.</span></h2>
                         <p className="section-subtitle">
