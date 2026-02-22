@@ -42,3 +42,48 @@
     background: var(--bg-card-hover);
     color: var(--accent-blue);
 }
+
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 102;
+}
+
+@media (max-width: 900px) {
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-card);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 101;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.active {
+        right: 0;
+    }
+
+    .nav-btn {
+        font-size: 1.25rem;
+        width: 100%;
+        max-width: 300px;
+        padding: 1rem;
+    }
+}

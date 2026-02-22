@@ -58,7 +58,7 @@
 }
 
 .card-icon-wrapper {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-card-hover);
     padding: 1rem;
     border-radius: 12px;
     margin-bottom: 1.5rem;

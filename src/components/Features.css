@@ -1,5 +1,5 @@
 .features-section {
-    background: rgba(2, 6, 23, 0.5);
+    background: var(--bg-card-hover);
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
 }
@@ -53,14 +53,14 @@
 .visual-dashboard {
     position: relative;
     z-index: 2;
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
     padding: 0;
     overflow: hidden;
 }
 
 .dashboard-header {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--bg-card-hover);
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -115,7 +115,7 @@
 .progress-track {
     width: 100%;
     height: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 0.5rem;
@@ -141,7 +141,7 @@
 }
 
 .stat-box {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-card-hover);
     padding: 1rem;
     border-radius: 8px;
     border: 1px solid var(--border-light);
@@ -171,7 +171,7 @@
 .orb-primary {
     width: 300px;
     height: 300px;
-    background: rgba(6, 182, 212, 0.15);
+    background: rgba(0, 39, 179, 0.1);
     top: -50px;
     right: -50px;
 }
@@ -179,7 +179,7 @@
 .orb-secondary {
     width: 250px;
     height: 250px;
-    background: rgba(139, 92, 246, 0.15);
+    background: rgba(95, 89, 255, 0.1);
     bottom: -50px;
     left: -50px;
 }
