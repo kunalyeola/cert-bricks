@@ -1,0 +1,141 @@
+.how-it-works-section {
+    position: relative;
+    background: var(--bg-card);
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 4rem auto 0;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--border-light);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding-bottom: 3rem;
+    z-index: 2;
+}
+
+.timeline-item.left {
+    left: 0;
+    padding-right: 3rem;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    padding-left: 3rem;
+    text-align: left;
+}
+
+.timeline-content {
+    padding: 2rem;
+    border-left: 2px solid transparent;
+}
+
+.timeline-item.left .timeline-content {
+    border-left: none;
+    border-right: 2px solid var(--accent-cyan);
+}
+
+.timeline-item.right .timeline-content {
+    border-left: 2px solid var(--accent-purple);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.step-number {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.step-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.step-description {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 1rem;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-dark);
+    border: 2px solid var(--border-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.timeline-item.left .timeline-dot {
+    right: -24px;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -24px;
+}
+
+.dot-icon {
+    color: var(--accent-cyan);
+}
+
+.timeline-item:hover .timeline-dot {
+    border-color: var(--accent-cyan);
+    box-shadow: var(--glow-cyan);
+    background: var(--bg-card);
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 24px;
+    }
+
+    .timeline-item {
+        width: 100%;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        padding-left: 4rem;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+        border-right: none;
+        border-left: 2px solid var(--accent-cyan);
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: 0;
+        right: auto;
+    }
+}
