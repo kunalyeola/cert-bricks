@@ -20,7 +20,8 @@ const Navbar = () => {
                 <div className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
                     <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/'); }}>Home</button>
                     <button className="nav-btn" onClick={() => setIsMobileMenuOpen(false)}>Courses and Certification</button>
-                    <button className="nav-btn" onClick={() => setIsMobileMenuOpen(false)}>JobPortal</button>
+                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); window.open('https://cyber-talent-ecosystem.vercel.app/', '_blank', 'noopener,noreferrer'); }}>JobPortal</button>
+                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/isdc'); }} title="Industry Skill Development Centre">ISDC</button>
                     <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/community-chapters'); }}>Community Chapters</button>
                     <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/industry-advisory-board'); }}>Industry Advisory Board</button>
                 </div>

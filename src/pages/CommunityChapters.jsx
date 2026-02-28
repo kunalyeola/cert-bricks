@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../components/Hero.css';
 
 const CommunityChapters = () => {
+    const navigate = useNavigate();
     useEffect(() => {
         const observerOptions = {
             root: null,
@@ -27,12 +29,12 @@ const CommunityChapters = () => {
     }, []);
 
     const chapters = [
-        { city: 'Bangalore', country: 'India', members: '18,000', image: '/banglore.png' },
-        { city: 'Pune', country: 'India', members: '2,500', image: '/pune.png' },
-        { city: 'Hyderabad', country: 'India', members: '1,500', image: '/hyedarbad.png' },
-        { city: 'Chennai', country: 'India', members: '1,100', image: '/chennai.png' },
-        { city: 'Mumbai', country: 'India', members: '1,000', image: '/mumbai.png' },
-        { city: 'Nashik', country: 'India', members: '1,000', image: '/Nashik.png' },
+        { city: 'Pune', country: 'India', image: '/pune.png' },
+        { city: 'Bangalore', country: 'India', image: '/banglore.png' },
+        { city: 'Hyderabad', country: 'India', image: '/hyedarbad.png' },
+        { city: 'Chennai', country: 'India', image: '/chennai.png' },
+        { city: 'Mumbai', country: 'India', image: '/mumbai.png' },
+        { city: 'Nashik', country: 'India', image: '/Nashik.png' },
     ];
 
     return (
@@ -80,24 +82,38 @@ const CommunityChapters = () => {
                                         </svg>
                                         <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: 'var(--text-primary)', margin: 0 }}>{chapter.city}, {chapter.country}</h3>
                                     </div>
-
-                                    <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '0.95rem' }}>{chapter.members} members</p>
-
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <button style={{
                                             padding: '8px 16px',
-                                            backgroundColor: 'var(--cyan-accent)',
+                                            backgroundColor: chapter.city === 'Pune' ? 'var(--cyan-accent)' : '#a0a0a0',
                                             color: '#000',
                                             borderRadius: '8px',
                                             fontWeight: '600',
                                             border: 'none',
-                                            cursor: 'pointer',
-                                            transition: 'opacity 0.2s ease',
+                                            cursor: chapter.city === 'Pune' ? 'pointer' : 'not-allowed',
+                                            transition: 'all 0.3s ease',
+                                            transform: 'scale(1)'
                                         }}
-                                            onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
-                                            onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                                            onMouseEnter={(e) => {
+                                                if (chapter.city === 'Pune') {
+                                                    e.currentTarget.style.transform = 'scale(1.05)';
+                                                    e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 210, 255, 0.4)';
+                                                }
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                if (chapter.city === 'Pune') {
+                                                    e.currentTarget.style.transform = 'scale(1)';
+                                                    e.currentTarget.style.boxShadow = 'none';
+                                                }
+                                            }}
+                                            disabled={chapter.city !== 'Pune'}
+                                            onClick={() => {
+                                                if (chapter.city === 'Pune') {
+                                                    navigate('/pune-chapter');
+                                                }
+                                            }}
                                         >
-                                            Join Chapter
+                                            {chapter.city === 'Pune' ? 'Join Chapter' : 'Coming Soon'}
                                         </button>
                                     </div>
                                 </div>
