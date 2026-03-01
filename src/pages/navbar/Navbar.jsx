@@ -5,49 +5,48 @@ import '../../assets/css/Navbar.css';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState('Home');
     const navigate = useNavigate();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const handleClick = (link) => {
-        setActiveLink(link);
-        setIsMobileMenuOpen(false);
-    };
-
-    const navItems = [
-        "Home",
-        "Courses and Certification",
-        "JobPortal",
-        "Community"
+    const navLinks = [
+        { name: 'Home', action: () => navigate('/') },
+        { name: 'Courses and Certification', action: () => { } },
+        { name: 'JobPortal', action: () => window.open('https://cyber-talent-ecosystem.vercel.app/', '_blank', 'noopener,noreferrer') },
+        { name: 'ISDC', action: () => navigate('/isdc'), title: 'Industry Skill Development Centre' },
+        { name: 'Community Chapters', action: () => navigate('/community-chapters') },
+        { name: 'Industry Advisory Board', action: () => navigate('/industry-advisory-board') }
     ];
+
+    const handleNavClick = (link) => {
+        setActiveLink(link.name);
+        setIsMobileMenuOpen(false);
+        link.action();
+    };
 
     return (
         <nav className="navbar">
             <div className="container navbar-container">
-                <div className="navbar-logo">
+                <div className="navbar-logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
                     <span className="text-gradient" style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>
                         Cert Bricks
                     </span>
                 </div>
 
                 <div className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
-                    {navItems.map((item) => (
+                    {navLinks.map((link) => (
                         <button
-                            key={item}
-                            className={`nav-btn ${activeLink === item ? 'active' : ''}`}
-                            onClick={() => handleClick(item)}
+                            key={link.name}
+                            className={`nav-btn ${activeLink === link.name ? 'active' : ''}`}
+                            onClick={() => handleNavClick(link)}
+                            title={link.title}
                         >
-                            {item}
+                            {link.name}
                         </button>
                     ))}
-                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/'); }}>Home</button>
-                    <button className="nav-btn" onClick={() => setIsMobileMenuOpen(false)}>Courses and Certification</button>
-                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); window.open('https://cyber-talent-ecosystem.vercel.app/', '_blank', 'noopener,noreferrer'); }}>JobPortal</button>
-                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/isdc'); }} title="Industry Skill Development Centre">ISDC</button>
-                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/community-chapters'); }}>Community Chapters</button>
-                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/industry-advisory-board'); }}>Industry Advisory Board</button>
                 </div>
 
                 <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
