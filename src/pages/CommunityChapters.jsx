@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../components/Hero.css';
+import '../pages/hero/Hero';
 
 const CommunityChapters = () => {
     const navigate = useNavigate();

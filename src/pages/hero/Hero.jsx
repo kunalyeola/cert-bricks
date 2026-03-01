@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, ArrowRight } from 'lucide-react';
-import './Hero.css';
+import '../../assets/css/Hero.css';
 
 const Hero = () => {
   return (
@@ -29,16 +29,16 @@ const Hero = () => {
           <button className="btn-primary animate-subtle-pulse">
             Start Your Journey <ArrowRight size={20} />
           </button>
-          <button className="btn-secondary">
+          <button className="btn-secondary text-gradient">
             View Career Tracks
           </button>
         </div>
 
-        <div className="hero-manifesto glass-panel mt-12 text-center reveal delay-500">
+      <div className="hero-manifesto hero-gradient-card mt-12 text-center reveal delay-500">
           <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>
             The Industry Doesn’t Need More Courses.
           </h2>
-          <h2 className="text-gradient text-glow" style={{ fontSize: '2rem' }}>
+         <h2 style={{ fontSize: '2rem', fontWeight: 800 }}>
             It Needs Verified Skills.
           </h2>
         </div>

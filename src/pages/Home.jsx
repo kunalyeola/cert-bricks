@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import Hero from '../components/Hero';
-import SkillGap from '../components/SkillGap';
-import Features from '../components/Features';
-import HowItWorks from '../components/HowItWorks';
-import ReadinessIndex from '../components/ReadinessIndex';
-import RemoteEconomy from '../components/RemoteEconomy';
+import Hero from '../pages/hero/Hero';
+import SkillGap from '../pages/skillGap/SkillGap';
+import Features from '../pages/features/Features';
+import HowItWorks from '../pages/howitworks/HowItWorks';
+import ReadinessIndex from '../pages/readinessIndex/ReadinessIndex';
+import RemoteEconomy from '../pages/remoteEconomy/RemoteEconomy';
 
 const Home = () => {
     useEffect(() => {

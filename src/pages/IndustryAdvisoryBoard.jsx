@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Linkedin } from 'lucide-react';
-import '../components/Hero.css';
+import '../pages/hero/Hero';
 
 const IndustryAdvisoryBoard = () => {
     useEffect(() => {

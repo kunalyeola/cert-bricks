@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../components/Hero.css';
+import '../pages/hero/Hero';
 
 const PuneChapter = () => {
     useEffect(() => {

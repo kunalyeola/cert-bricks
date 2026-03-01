@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import './Navbar.css';
+import '../../assets/css/Navbar.css';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,13 +11,37 @@ const Navbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    const handleClick = (link) => {
+        setActiveLink(link);
+        setIsMobileMenuOpen(false);
+    };
+
+    const navItems = [
+        "Home",
+        "Courses and Certification",
+        "JobPortal",
+        "Community"
+    ];
+
     return (
         <nav className="navbar">
             <div className="container navbar-container">
                 <div className="navbar-logo">
-                    <span className="text-gradient" style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>cert Bricks</span>
+                    <span className="text-gradient" style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>
+                        Cert Bricks
+                    </span>
                 </div>
+
                 <div className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                    {navItems.map((item) => (
+                        <button
+                            key={item}
+                            className={`nav-btn ${activeLink === item ? 'active' : ''}`}
+                            onClick={() => handleClick(item)}
+                        >
+                            {item}
+                        </button>
+                    ))}
                     <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/'); }}>Home</button>
                     <button className="nav-btn" onClick={() => setIsMobileMenuOpen(false)}>Courses and Certification</button>
                     <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); window.open('https://cyber-talent-ecosystem.vercel.app/', '_blank', 'noopener,noreferrer'); }}>JobPortal</button>
