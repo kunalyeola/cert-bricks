@@ -1,6 +1,6 @@
 import React from 'react';
 import { Network, Server, Cloud, Cpu, Briefcase } from 'lucide-react';
-import './RemoteEconomy.css';
+import '../../assets/css/RemoteEconomy.css';
 
 const RemoteEconomy = () => {
     const employers = [

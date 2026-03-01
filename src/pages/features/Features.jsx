@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
-import './Features.css';
+import '../../assets/css/Features.css';
 
 const Features = () => {
     const featuresList = [

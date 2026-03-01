@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldAlert, Users, TrendingDown } from 'lucide-react';
-import './SkillGap.css';
+import '../../assets/css/SkillGap.css';
 
 const SkillGap = () => {
     const cards = [

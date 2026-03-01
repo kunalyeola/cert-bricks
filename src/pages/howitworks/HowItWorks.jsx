@@ -1,6 +1,6 @@
 import React from 'react';
 import { Crosshair, BookOpen, Laptop, FileSignature, BarChart2, Globe } from 'lucide-react';
-import './HowItWorks.css';
+import '../../assets/css/HowItWorks.css';
 
 const HowItWorks = () => {
     const steps = [

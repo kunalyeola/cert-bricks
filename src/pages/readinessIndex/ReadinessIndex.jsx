@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, Clock, Wrench, Activity, ShieldCheck } from 'lucide-react';
-import './ReadinessIndex.css';
+import '../../assets/css/ReadinessIndex.css';
 
 const ReadinessIndex = () => {
     const metrics = [
