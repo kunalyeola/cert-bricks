@@ -48,7 +48,7 @@ const HowItWorks = () => {
                     <div className="timeline-line"></div>
                     {steps.map((step, index) => (
                         <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left reveal-left' : 'right reveal-right'} delay-${(index % 2 + 1) * 100}`}>
-                            <div className="timeline-content glass-panel">
+                            <div className="timeline-content">
                                 <span className="step-number text-gradient">Step {index + 1}</span>
                                 <h3 className="step-title">{step.title}</h3>
                                 <p className="step-description">{step.description}</p>

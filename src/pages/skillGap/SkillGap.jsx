@@ -11,13 +11,13 @@ const SkillGap = () => {
             description: "Average global cost of a data breach. Organizations facing skill shortages experience higher breach costs and longer containment times."
         },
         {
-            icon: <Users size={32} className="text-cyan-accent" />,
+            icon: <Users size={32} className="text-purple-accent" />,
             title: "Hiring & Productivity Gap",
             stat: "6–9 Months",
             description: "Average time to hire skilled tech professionals. Extended hiring cycles delay projects, increase operational costs, and slow innovation."
         },
         {
-            icon: <TrendingDown size={32} className="text-blue-accent" />,
+            icon: <TrendingDown size={32} className="text-purple-accent" />,
             title: "Execution Risk",
             stat: "70%+",
             description: "Of digital transformation initiatives fail to meet objectives. Lack of execution-ready talent is one of the primary drivers of project failure."
@@ -37,7 +37,7 @@ const SkillGap = () => {
 
                 <div className="cards-grid">
                     {cards.map((card, index) => (
-                        <div key={index} className={`glass-panel skill-card reveal delay-${(index + 1) * 100}`}>
+                        <div key={index} className={`skill-card reveal delay-${(index + 1) * 100}`}>
                             <div className="card-icon-wrapper">
                                 {card.icon}
                             </div>

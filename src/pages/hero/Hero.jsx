@@ -34,11 +34,11 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="hero-manifesto heroglass-panel mt-12 text-center reveal delay-500">
+      <div className="hero-manifesto hero-gradient-card mt-12 text-center reveal delay-500">
           <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>
             The Industry Doesn’t Need More Courses.
           </h2>
-          <h2 className="text-gradient text-glow" style={{ fontSize: '2rem' }}>
+         <h2 style={{ fontSize: '2rem', fontWeight: 800 }}>
             It Needs Verified Skills.
           </h2>
         </div>

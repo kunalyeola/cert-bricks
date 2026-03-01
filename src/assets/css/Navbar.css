@@ -96,7 +96,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .mobile-menu-toggle {
         display: flex;
         align-items: center;

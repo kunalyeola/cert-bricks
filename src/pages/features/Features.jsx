@@ -14,18 +14,20 @@ const Features = () => {
     return (
         <section className="section features-section">
             <div className="container">
+                <div className="section-header text-center">
+                    <span className="section-eyebrow">What Makes Us Different</span>
+                    <h2 className="section-title">Built Around Real Job Roles.</h2>
+                    <p className="section-subtitle">
+                        Instead of selling isolated courses, we offer a comprehensive ecosystem designed to guarantee your capability.
+                    </p>
+                </div>
                 <div className="features-grid">
                     <div className="features-content reveal-left">
-                        <span className="section-eyebrow">What Makes Us Different</span>
-                        <h2 className="section-title">Built Around Real Job Roles. <br /><span className="text-gradient">Not Random Content.</span></h2>
-                        <p className="section-subtitle">
-                            Instead of selling isolated courses, we offer a comprehensive ecosystem designed to guarantee your capability.
-                        </p>
-
+                  
                         <ul className="features-list">
                             {featuresList.map((feature, index) => (
-                                <li key={index} className={`feature-item glass-panel delay-${(index + 1) * 100}`}>
-                                    <CheckCircle size={24} className="text-cyan-accent flex-shrink-0" />
+                                <li key={index} className={`feature-item delay-${(index + 1) * 100}`}>
+                                    <CheckCircle size={24} className="flex-shrink-0" />
                                     <span>{feature}</span>
                                 </li>
                             ))}
@@ -33,7 +35,7 @@ const Features = () => {
                     </div>
 
                     <div className="features-visual reveal-right">
-                        <div className="visual-dashboard glass-panel delay-200">
+                        <div className="visual-dashboard delay-200">
                             <div className="dashboard-header">
                                 <div className="dots">
                                     <span></span><span></span><span></span>
@@ -52,11 +54,11 @@ const Features = () => {
                                 <div className="stats-row">
                                     <div className="stat-box">
                                         <span className="label">Lab Hours</span>
-                                        <span className="value">120h+</span>
+                                        <span className="value">  120h+</span>
                                     </div>
                                     <div className="stat-box">
                                         <span className="label">Simulations Passed</span>
-                                        <span className="value">14/15</span>
+                                        <span className="value">  14/15</span>
                                     </div>
                                 </div>
                             </div>
