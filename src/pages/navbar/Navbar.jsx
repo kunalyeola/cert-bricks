@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import '../../assets/css/Navbar.css';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState("Home"); // default active
+    const navigate = useNavigate();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -41,6 +42,12 @@ const Navbar = () => {
                             {item}
                         </button>
                     ))}
+                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/'); }}>Home</button>
+                    <button className="nav-btn" onClick={() => setIsMobileMenuOpen(false)}>Courses and Certification</button>
+                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); window.open('https://cyber-talent-ecosystem.vercel.app/', '_blank', 'noopener,noreferrer'); }}>JobPortal</button>
+                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/isdc'); }} title="Industry Skill Development Centre">ISDC</button>
+                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/community-chapters'); }}>Community Chapters</button>
+                    <button className="nav-btn" onClick={() => { setIsMobileMenuOpen(false); navigate('/industry-advisory-board'); }}>Industry Advisory Board</button>
                 </div>
 
                 <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>

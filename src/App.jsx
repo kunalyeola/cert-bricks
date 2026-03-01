@@ -1,47 +1,26 @@
-import React, { useEffect } from 'react';
 import Navbar from './pages/navbar/Navbar';
-import Hero from './pages/hero/Hero';
-import SkillGap from './pages/skillGap/SkillGap';
-import Features from './pages/features/Features';
-import HowItWorks from './pages/howitworks/HowItWorks';
-import ReadinessIndex from './pages/readinessIndex/ReadinessIndex';
-import RemoteEconomy from './pages/remoteEconomy/RemoteEconomy';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import IndustryAdvisoryBoard from './pages/IndustryAdvisoryBoard';
+import CommunityChapters from './pages/CommunityChapters';
+import PuneChapter from './pages/PuneChapter';
+import ISDC from './pages/ISDC';
 
 function App() {
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    revealElements.forEach(el => observer.observe(el));
-
-    return () => {
-      revealElements.forEach(el => observer.unobserve(el));
-    };
-  }, []);
-
   return (
-    <main className="app-container">
-      <Navbar />
-      <Hero />
-      <SkillGap />
-      <Features />
-      <HowItWorks />
-      <ReadinessIndex />
-      <RemoteEconomy />
-    </main>
+    <Router>
+      <main className="app-container">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/industry-advisory-board" element={<IndustryAdvisoryBoard />} />
+          <Route path="/community-chapters" element={<CommunityChapters />} />
+          <Route path="/pune-chapter" element={<PuneChapter />} />
+          <Route path="/isdc" element={<ISDC />} />
+        </Routes>
+      </main>
+
+    </Router>
   );
 }
 
