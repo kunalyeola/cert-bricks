@@ -5,6 +5,8 @@ import IndustryAdvisoryBoard from './pages/IndustryAdvisoryBoard';
 import CommunityChapters from './pages/CommunityChapters';
 import PuneChapter from './pages/PuneChapter';
 import ISDC from './pages/ISDC';
+import CoursesAndCertification from './pages/CoursesAndCertification';
+import CategoryCourses from './pages/CategoryCourses';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/community-chapters" element={<CommunityChapters />} />
           <Route path="/pune-chapter" element={<PuneChapter />} />
           <Route path="/isdc" element={<ISDC />} />
+          <Route path="/courses-and-certification" element={<CoursesAndCertification />} />
+          <Route path="/courses/:categoryName" element={<CategoryCourses />} />
         </Routes>
       </main>
 
