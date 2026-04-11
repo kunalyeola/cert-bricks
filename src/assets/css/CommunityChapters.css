@@ -1,0 +1,314 @@
+/* ================= HERO ================= */
+
+.community-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+/* Background */
+.community-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  transition: opacity 1s ease-in-out;
+  will-change: transform;
+}
+
+/* Overlay */
+.community-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+/* Glow */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(59,130,246,0.25), transparent 60%),
+              radial-gradient(circle at 70% 60%, rgba(168,85,247,0.25), transparent 60%);
+  z-index: 1;
+  will-change: transform;
+}
+.community-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.2) 0%,
+    rgba(0,0,0,0.6) 100%
+  );
+
+  z-index: 3;
+}
+/* ================= GLASS CARD ================= */
+
+.hero-glass-card {
+  position: relative;
+  z-index: 5;
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  max-width: 800px;
+  text-align: center;
+
+  /* Stronger readability */
+  background: rgba(255,255,255,0.15);
+
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.5),
+    inset 0 0 40px rgba(255,255,255,0.05);
+
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+}
+
+/* Glow border */
+.hero-glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(120deg, #3b82f6, #a855f7);
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.4;
+}
+
+/* Text */
+.hero-title {
+  font-size: clamp(2.8rem, 5vw, 3.0rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-family: "Work Sans", sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 1rem;
+    font-family: "Work Sans", sans-serif;
+  color: rgba(255,255,255,0.9);
+
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #1c6ff6, #9c39f9);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+.hero-badge {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.hero-badge span {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* ================= GRID ================= */
+
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.2rem;
+}
+
+/* ================= CARD ================= */
+
+.chapter-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Gradient border effect */
+.chapter-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(120deg, #3b82f6, #a855f7);
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover state */
+.chapter-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
+
+.chapter-card:hover::before {
+  opacity: 1;
+}
+
+.chapter-card::before,
+.chapter-card::after {
+  pointer-events: none;
+}
+
+/* ================= IMAGE ================= */
+
+.chapter-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.chapter-image-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Zoom effect */
+.chapter-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay gradient on image */
+.chapter-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.5),
+    transparent
+  );
+}
+
+/* ================= BADGE ================= */
+
+.chapter-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+font-family: "Work Sans", sans-serif;
+  border-radius: 999px;
+}
+
+/* ================= CONTENT ================= */
+
+.chapter-content {
+  padding: 20px;
+}
+
+.chapter-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+  font-family: "Work Sans", sans-serif;
+}
+
+.chapter-desc {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* ================= BUTTON ================= */
+
+.chapter-btn {
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  border: none;
+ font-family: "Work Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Active button */
+.chapter-btn.active {
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  color: #fff;
+   font-family: "Work Sans", sans-serif;
+}
+
+.chapter-btn.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59,130,246,0.4);
+   font-family: "Work Sans", sans-serif;
+}
+
+/* Disabled */
+.chapter-btn.disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+   font-family: "Work Sans", sans-serif;
+}
+
+/* ================= SHINE EFFECT ================= */
+
+.chapter-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+/* Shine on hover */
+.chapter-card:hover::after {
+  animation: shine 1s ease;
+}
+
+@keyframes shine {
+  to {
+    left: 120%;
+  }
+}

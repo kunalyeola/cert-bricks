@@ -1,0 +1,347 @@
+.isdc .hero-section {
+  position: relative;
+  padding: 7rem 0;
+  overflow: hidden;
+  background: #ffffff;
+  height: 100vh;
+}
+
+.isdc .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #3B82F6, #6366F1, #A855F7);
+  width: 58%;
+  /* Increased to accommodate left content better */
+  clip-path: polygon(0 0, 92% 0, 85% 100%, 0% 100%);
+  z-index: 0;
+}
+
+/* Layout */
+.isdc .hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* min-height: 50vh; */
+  gap: 2rem;
+  /* Added gap between left and right */
+  position: relative;
+  z-index: 1;
+}
+
+/* LEFT SIDE - More width for content */
+.isdc .hero-left {
+  width: 55%;
+  /* Increased width for left content */
+  max-width: 650px;
+  padding-right: 1rem;
+}
+
+/* RIGHT SIDE - Minimal width for image */
+.isdc .hero-right {
+  width: 35%;
+  /* Reduced width for right image */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.isdc .hero-right>* {
+  width: 100%;
+  max-width: 400px;
+  /* Slightly smaller max-width for better proportion */
+}
+
+.isdc .hero-title {
+  font-size: clamp(2.8rem, 5vw, 3.0rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+.isdc .hero-description {
+  max-width: 500px;
+  opacity: 0.8;
+  color: #fff;
+  font-size: clamp(2.8rem, 5vw, 3.0rem);
+  margin-bottom: 1rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+.isdc .hero-subtext {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-bottom: 1rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+.isdc .hero-subtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-bottom: 1rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* BUTTON */
+.isdc .hero-btn {
+  background: white;
+  color: #3B82F6;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Work Sans", sans-serif;
+}
+
+.isdc .hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Container utility */
+.isdc .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about-section {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-header h2 {
+  font-size: clamp(2.2rem, 4vw, 2.0rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  font-family: "Work Sans", sans-serif;
+}
+
+.about-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* MAIN CARD */
+.about-card {
+  background: linear-gradient(135deg, #3B82F6, #6366F1, #A855F7);
+  padding: 3rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* GRID */
+.about-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* MINI CARDS */
+.about-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.2rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  transition: 0.3s;
+}
+
+.about-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.about-item span {
+  font-weight: bold;
+}
+
+.domains-header {
+  text-align: center;
+}
+
+.domains-header .section-title {
+  font-size: clamp(2.2rem, 4vw, 2.0rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  font-family: "Work Sans", sans-serif;
+  gap: 0.6rem;
+}
+
+/* ICON STYLE */
+.domains-header .title-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  color: var(--secondary-blue);
+}
+
+.domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* CARD BASE */
+.domain-card {
+  padding: 1rem;
+  border-radius: 16px;
+  background: white;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
+}
+
+/* HOVER */
+.domain-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ICON */
+.domain-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+/* TITLE */
+.domain-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* LIST */
+.domain-card ul {
+  padding-left: 1rem;
+}
+
+.domain-card li {
+  margin-bottom: 0.5rem;
+  color: #64748b;
+}
+
+/* COLOR VARIANTS */
+.domain-card.cyan .domain-icon {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+}
+
+.domain-card.purple .domain-icon {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+}
+
+.domain-card.blue .domain-icon {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.domain-card.pink .domain-icon {
+  background: linear-gradient(135deg, #ec4899, #f43f5e);
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .isdc .hero-left {
+    width: 50%;
+  }
+
+  .isdc .hero-right {
+    width: 40%;
+  }
+}
+
+@media (max-width: 912px) {
+  .isdc .hero-section {
+    position: relative;
+    padding: 7rem 0;
+    overflow: hidden;
+    background: #ffffff;
+    background: linear-gradient(135deg, #3B82F6, #6366F1, #A855F7);
+    height: 100vh;
+  }
+
+  .isdc .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #3B82F6, #6366F1, #A855F7);
+    z-index: 0;
+  }
+  .isdc .hero-title {
+    margin-top: 1rem;
+  }
+
+
+}
+
+@media (max-width: 900px) {
+  .isdc .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .isdc .hero-left {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .isdc .hero-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .isdc .hero-right>* {
+    max-width: 350px;
+  }
+
+  .isdc .hero-section::before {
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0.1;
+    /* Makes background subtle on mobile */
+  }
+}
+
+@media (max-width: 640px) {
+  .isdc .hero-section {
+    padding: 4rem 0;
+  }
+
+  .isdc .hero-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .isdc .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .isdc .hero-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

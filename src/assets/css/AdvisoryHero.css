@@ -1,0 +1,294 @@
+
+
+.hero-section {
+  position: relative;
+  min-height: 100vh; /* better than fixed height */
+  display: flex;
+  align-items: center; /* vertical center */
+  overflow: hidden;
+  padding: 2rem 0; /* reduce heavy padding */
+    background: linear-gradient(90deg, #3B82F6, #A855F7);
+}
+
+/* GRID LAYOUT */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+   position: relative;
+  z-index: 2;
+}
+
+/* LEFT SIDE */
+.hero-left {
+  max-width: 600px;
+}
+
+.hero-title {
+   font-size: clamp(2.8rem, 5vw, 3.0rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-family: "Work Sans", sans-serif;
+}
+
+.hero-subtitle {
+  margin-top: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  font-family: "Work Sans", sans-serif;
+}
+
+.hero-subtext {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  font-family: "Work Sans", sans-serif;
+}
+/* RIGHT SIDE */
+/* RIGHT SIDE */
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LOTTIE CONTAINER (NEW) */
+.hero-lottie {
+  width: 100%;
+  max-width: 480px;   /* ✅ controls width */
+  height: 480px;      /* ✅ keeps it square + clean */
+ animation: float 6s ease-in-out infinite;
+}
+
+/* Make sure lottie fits perfectly */
+.hero-lottie canvas,
+.hero-lottie svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bg-glow-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+
+/* BACKGROUND GLOW */
+.bg-glow-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #3B82F6, transparent);
+  filter: blur(120px);
+  opacity: 0.4;
+}
+
+.bg-glow-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #A855F7, transparent);
+  filter: blur(120px);
+  opacity: 0.4;
+}
+
+/* ANIMATIONS */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* SECTION */
+.advisory-section {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+
+.advisory-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.advisor-card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* GRADIENT TOP */
+.advisor-card-bg {
+  height: 120px;
+  background: linear-gradient(135deg, #3B82F6, #A855F7);
+}
+
+/* AVATAR */
+.advisor-avatar {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.advisor-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* CONTENT */
+.advisor-content {
+  padding: 5rem 2rem 2rem;
+  text-align: center;
+}
+
+.advisor-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #0f172a;
+    font-family: "Work Sans", sans-serif;
+}
+
+.advisor-role {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3B82F6;
+  margin-bottom: 1rem;
+    font-family: "Work Sans", sans-serif;
+}
+
+.advisor-content p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+    font-family: "Work Sans", sans-serif;
+}
+
+/* BUTTON */
+.advisor-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #0a66c2, #3B82F6);
+  color: white;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+    font-family: "Work Sans", sans-serif;
+    text-decoration: none !important;
+}
+
+/* HOVER EFFECTS 🔥 */
+.advisor-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 
+    0 20px 60px rgba(59,130,246,0.2),
+    0 0 40px rgba(168,85,247,0.15);
+}
+
+.advisor-card:hover .advisor-btn {
+  transform: scale(1.05);
+  color: #fff;
+  text-decoration: none !important;
+}
+
+/* SUBTLE BORDER GLOW */
+.advisor-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, #3B82F6, #A855F7);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.advisor-card:hover::before {
+  opacity: 1;
+}
+
+
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-right {
+    margin-top: 1rem;
+  }
+
+  .hero-lottie {
+    max-width: 340px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-lottie {
+    max-width: 280px;
+    height: 280px;
+  }
+}
