@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CheckCircle } from 'lucide-react';
 import '../../assets/css/Features.css';
 
 const Features = () => {
+    const sectionRef = useRef(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     const featuresList = [
         "Career Tracks aligned with global hiring standards",
         "Hands-on lab environments",
@@ -12,7 +32,7 @@ const Features = () => {
     ];
 
     return (
-        <section className="section features-section">
+        <section ref={sectionRef} className="section features-section">
             <div className="container">
                 <div className="section-header text-center">
                     <span className="section-eyebrow">What Makes Us Different</span>
@@ -23,11 +43,23 @@ const Features = () => {
                 </div>
                 <div className="features-grid">
                     <div className="features-content reveal-left">
-                  
+                        <svg width="0" height="0">
+                            <defs>
+                                <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stopColor="#3B82F6" />
+                                    <stop offset="50%" stopColor="#6366F1" />
+                                    <stop offset="100%" stopColor="#A855F7" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
                         <ul className="features-list">
                             {featuresList.map((feature, index) => (
-                                <li key={index} className={`feature-item delay-${(index + 1) * 100}`}>
-                                    <CheckCircle size={24} className="flex-shrink-0" />
+                                <li
+                                    key={index}
+                                    className={`feature-item ${visible ? "show" : ""}`}
+                                    style={{ animationDelay: `${index * 0.15}s` }}
+                                >
+                                    <CheckCircle size={24} className="svg flex-shrink-0" />
                                     <span>{feature}</span>
                                 </li>
                             ))}

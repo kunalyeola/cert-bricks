@@ -4,6 +4,34 @@
     overflow: hidden;
 }
 
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-family: "Work Sans", sans-serif;
+}
+
+.section-title {
+    font-size: clamp(2.2rem, 4vw, 2.0rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-family: "Work Sans", sans-serif;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 1rem;
+    font-family: "Work Sans", sans-serif;
+}
+
 .readiness-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -306,18 +334,21 @@
     font-weight: 700;
     color: #0F172A;
     margin-bottom: 0.5rem;
+    font-family: "Work Sans", sans-serif;
 }
 
 .action-text {
     font-size: 0.95rem;
     color: #64748B;
     max-width: 420px;
+    font-family: "Work Sans", sans-serif;
 }
 .action-cta {
     display: flex;
     flex-direction: column;
     align-items: flex-end;   /* aligns button to right */
     text-align: right;
+    font-family: "Work Sans", sans-serif;
 }
 
 .btn-primary {
@@ -330,6 +361,7 @@
     background: linear-gradient(135deg, #3B82F6, #A855F7);
     color: white;
     transition: all 0.3s ease;
+    font-family: "Work Sans", sans-serif;
 }
 
 .btn-primary:hover {
@@ -342,6 +374,7 @@
     margin-top: 0.6rem;
     font-size: 0.75rem;
     color: #94A3B8;
+    font-family: "Work Sans", sans-serif;
 }
 .action-box:hover {
     transform: translateY(-6px);

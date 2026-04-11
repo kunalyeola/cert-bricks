@@ -1,9 +1,38 @@
-
- .features-section {
+.features-section {
     position: relative;
     padding: 8rem 0;
-    background: #F8FAFC; /* subtle enterprise tone */
+    background: #F8FAFC;
+    /* subtle enterprise tone */
     border-top: 1px solid var(--border-light);
+}
+
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-family: "Work Sans", sans-serif;
+}
+
+.section-title {
+    font-size: clamp(2.2rem, 4vw, 2.0rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-family: "Work Sans", sans-serif;
+}
+
+
+.section-subtitle {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 1rem;
+    font-family: "Work Sans", sans-serif;
 }
 
 /* Gradient top accent bar */
@@ -37,6 +66,33 @@
     max-width: 600px;
 }
 
+.gradient-text {
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feature-item .svg {
+    stroke: url(#icon-gradient);
+}
+
+.feature-item:hover .svg {
+    stroke: white;
+}
+
+.feature-item span {
+    background:
+        linear-gradient(135deg,
+            #3B82F6,
+            #6366F1,
+            #A855F7);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+    font-family: "Work Sans", sans-serif;
+}
+
 .features-list {
     list-style: none;
     display: flex;
@@ -54,10 +110,31 @@
     font-size: 1.05rem;
     font-weight: 500;
     background: #ffffff;
-  border-left: 3px solid var(--border-light);
+    border-left: 3px solid var(--border-light);
+    border-bottom: 3px solid var(--border-light);
     transition: all 0.35s ease;
     cursor: pointer;
     overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.feature-item.show {
+    animation: featureReveal 0.6s ease forwards;
+}
+
+/* Keyframe */
+@keyframes featureReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Gradient overlay */
@@ -71,7 +148,6 @@
     z-index: 0;
 }
 
-/* Left Accent Bar (animated) */
 .feature-item::before {
     content: "";
     position: absolute;
@@ -86,8 +162,7 @@
     z-index: 1;
 }
 
-/* Keep content above layers */
-.feature-item > * {
+.feature-item>* {
     position: relative;
     z-index: 2;
 }
@@ -106,10 +181,10 @@
     transform: scaleY(1);
 }
 
-.feature-item:hover span,
-.feature-item:hover svg {
+.feature-item:hover span {
+    -webkit-text-fill-color: white;
     color: white;
-       transition: color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .flex-shrink-0 {
@@ -174,6 +249,7 @@
     font-size: 0.875rem;
     color: var(--text-secondary);
     font-weight: 500;
+    font-family: "Work Sans", sans-serif;
 }
 
 .dashboard-body {
@@ -188,7 +264,9 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    font-family: "Work Sans", sans-serif;
 }
+
 .progress-track {
     width: 100%;
     height: 6px;
@@ -202,11 +280,6 @@
     background: var(--gradient-main);
 }
 
-/* .progress-fill {
-    height: 100%;
-       background: var(--gradient-main);
-    border-radius: 4px;
-} */
 
 .progress-value {
     text-align: right;
@@ -220,6 +293,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
+
 .stat-box {
     background: #F8FAFC;
     padding: 1.2rem;
@@ -230,13 +304,16 @@
 .stat-box .label {
     font-size: 0.875rem;
     color: var(--text-muted);
+    font-family: "Work Sans", sans-serif;
 }
 
 .stat-box .value {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary-dark);
+    font-family: "Work Sans", sans-serif;
 }
+
 .stat-box:hover {
     background: white;
     box-shadow: 0 10px 10px rgba(15, 23, 42, 0.08);

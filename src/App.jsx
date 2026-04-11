@@ -1,12 +1,12 @@
 import Navbar from './pages/navbar/Navbar';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import IndustryAdvisoryBoard from './pages/IndustryAdvisoryBoard';
-import CommunityChapters from './pages/CommunityChapters';
-import PuneChapter from './pages/PuneChapter';
-import ISDC from './pages/ISDC';
-import CoursesAndCertification from './pages/CoursesAndCertification';
-import CategoryCourses from './pages/CategoryCourses';
+import IndustryAdvisoryBoard from './pages/industryAdvisoryBoard/IndustryAdvisoryBoard';
+import CommunityChapters from './pages/communityChapters/CommunityChapters';
+import PuneChapter from './pages/communityChapters/Chapters/PuneChapter';
+import ChapterPage from './pages/communityChapters/Chapters/ChapterPage';
+
+import ISDC from './pages/ISDC/ISDC';
 
 function App() {
   return (
@@ -17,10 +17,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/industry-advisory-board" element={<IndustryAdvisoryBoard />} />
           <Route path="/community-chapters" element={<CommunityChapters />} />
-          <Route path="/pune-chapter" element={<PuneChapter />} />
+          {/* <Route path="/pune-chapter" element={<PuneChapter />} /> */}
+          <Route path="/chapter/:city" element={<ChapterPage />} />
           <Route path="/isdc" element={<ISDC />} />
-          <Route path="/courses-and-certification" element={<CoursesAndCertification />} />
-          <Route path="/courses/:categoryName" element={<CategoryCourses />} />
         </Routes>
       </main>
 

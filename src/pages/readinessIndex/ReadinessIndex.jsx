@@ -132,10 +132,6 @@ const ReadinessIndex = () => {
                             Every learner receives a comprehensive, verified profile reflecting actual capability. Designed to help employers hire based on evidence, not just a resume.
                         </p>
 
-                        {/* <div className="action-box">
-                            <p>Hire candidates who have already proven they can do the job in production environments.</p>
-                            <button className="btn-primary mt-4">Explore Talent Network</button>
-                        </div> */}
                         <div className="action-box">
                             <div className="action-content">
                                 <h4 className="action-title">

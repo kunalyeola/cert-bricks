@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Crosshair, BookOpen, Laptop, FileSignature, BarChart2, Globe } from 'lucide-react';
 import '../../assets/css/HowItWorks.css';
 
 const HowItWorks = () => {
+    const sectionRef = useRef(null);
+    const [active, setActive] = useState(false);
+    useEffect(() => {
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setActive(true);
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+
+    }, [])
     const steps = [
         {
             icon: <Crosshair size={24} />,
@@ -37,28 +57,47 @@ const HowItWorks = () => {
     ];
 
     return (
-        <section className="section how-it-works-section">
+        <section ref={sectionRef} className="section how-it-works-section">
             <div className="container">
                 <div className="section-header text-center reveal">
                     <span className="section-eyebrow">How It Works</span>
-                    <h2 className="section-title">From Learning to Employment — <br /><span className="text-gradient">Structured for Industry Success</span></h2>
+                    <h2 className="section-title">From Learning to Employment — <span className="text-gradient">Structured for Industry Success</span></h2>
+                </div>
+                <div className="how-it-works-steps">
+
+                    <div className="steps-line"></div>
+
+                    <div
+                        className="steps-progress"
+                        style={{ width: active ? "100%" : "0%" }}
+                    ></div>
+
+                    <div className="steps-grid">
+
+                        {steps.map((step, index) => (
+                            <div key={index} className="step-item">
+
+                                <div className="step-icon">
+                                    {step.icon}
+                                </div>
+
+                                <div className="step-card">
+                                    <span className="step-number text-gradient">
+                                        Step {index + 1}
+                                    </span>
+
+                                    <h3>{step.title}</h3>
+
+                                    <p>{step.description}</p>
+                                </div>
+
+                            </div>
+                        ))}
+
+                    </div>
+
                 </div>
 
-                <div className="timeline-container">
-                    <div className="timeline-line"></div>
-                    {steps.map((step, index) => (
-                        <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left reveal-left' : 'right reveal-right'} delay-${(index % 2 + 1) * 100}`}>
-                            <div className="timeline-content">
-                                <span className="step-number text-gradient">Step {index + 1}</span>
-                                <h3 className="step-title">{step.title}</h3>
-                                <p className="step-description">{step.description}</p>
-                            </div>
-                            <div className="timeline-dot">
-                                <div className="dot-icon">{step.icon}</div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
             </div>
         </section>
     );
